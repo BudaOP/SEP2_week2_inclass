@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Pos?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.sep2_week2_inclass.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.sep2_week2_inclass.HelloController"
+      spacing="20" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Fuel Consumption Calculator" style="-fx-font-size: 24px;" wrapText="true"/>
+
+    <Label text="Ivan Budanov" wrapText="true"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label fx:id="lblDistance" text="Distance:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDistance" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label fx:id="lblFuel" text="Fuel:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtFuel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button fx:id="btnCalculate" text="Calculate" onAction="#onCalculateClick"/>
+
+    <Label fx:id="lblResult" text="Result will appear here"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="EN" onAction="#onENClick"/>
+        <Button text="FR" onAction="#onFRClick"/>
+        <Button text="JP" onAction="#onJPClick"/>
+        <Button text="IR" onAction="#onIRClick"/>
+    </HBox>
 </VBox>
